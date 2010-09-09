@@ -1,6 +1,8 @@
 = cj
 
-Description goes here.
+Commission Junction REST API interface
+
+You will need a ~/.commision_junction.yml to run tests.
 
 == Note on Patches/Pull Requests
  
