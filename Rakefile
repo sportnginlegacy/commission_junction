@@ -6,11 +6,12 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "cj"
     gem.summary = %Q{Commision Junction API Gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{A wrapper for Commission Juncion's REST API to retrieve ruby objects}
     gem.email = "astevens@tstmedia.com"
     gem.homepage = "http://github.com/astevens/cj"
     gem.authors = ["Andrew Stevens"]
     gem.add_development_dependency "yard", ">= 0"
+    gem.add_dependency "httparty", ">=0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

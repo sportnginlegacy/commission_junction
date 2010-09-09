@@ -2,7 +2,17 @@
 
 Commission Junction REST API interface
 
-You will need a ~/.commision_junction.yml to run tests.
+Currently you will need a ~/.commision_junction.yml to use this.
+
+Retrieves data from Commission Junction via REST API and returns simple objects:
+
+[Examples]
+* CommissionJunction::Advertiser.find(:keywords => "stuff")
+* CommissionJunction::Product.find(:keywords => "+orange +pants +hat")
+* CommissionJunction::Commission.find
+
+Methods accept the same parameters as the CJ API.
+
 
 == Note on Patches/Pull Requests
  
