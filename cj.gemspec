@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cj}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andrew Stevens"]
-  s.date = %q{2010-09-09}
+  s.date = %q{2010-09-10}
   s.description = %q{A wrapper for Commission Juncion's REST API to retrieve ruby objects}
   s.email = %q{astevens@tstmedia.com}
   s.extra_rdoc_files = [
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "cj.gemspec",
      "lib/cj.rb",
      "lib/cj/advertiser.rb",
      "lib/cj/base.rb",
