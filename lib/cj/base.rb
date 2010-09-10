@@ -3,7 +3,7 @@ module CommissionJunction
     include HTTParty
     format :xml 
     
-    @@credentials = nil
+    @@credentials = {}
     @@default_params = {}
     
     def initialize(params)
@@ -13,6 +13,14 @@ module CommissionJunction
         instance_variable_set("@#{key}".intern, val)
         instance_eval " class << self ; attr_reader #{key.intern.inspect} ; end "
       end
+    end
+    
+    def developer_key=(key)
+      @@credentials['developer_key'] = key.to_s
+    end
+    
+    def website_id=(id)
+      @@credentials['website_id'] = id.to_s
     end
     
     
@@ -60,14 +68,15 @@ module CommissionJunction
       end # get
       
       def credentials
-        unless @@credentials
+        unless @@credentials && @@credentials.length > 0
           # there is no offline or test mode for CJ - so I won't include any credentials in this gem
-          key_file = File.join(ENV['HOME'], '.commission_junction.yaml')
+          config_file = "config/commision_junction.yml"
+          config_file = File.join(ENV['HOME'], '.commission_junction.yaml') unless File.exist?(config_file)
 
-          unless File.exist?(key_file)
+          unless File.exist?(config_file)
             warn "Warning: #{key_file} does not exist. Put your CJ developer key and website ID in ~/.commision_junction.yml to enable live testing."
           else
-            @@credentials = YAML.load(File.read(key_file))
+            @@credentials = YAML.load(File.read(config_file))
           end
         end
         @@credentials
