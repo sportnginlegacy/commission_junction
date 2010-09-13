@@ -59,7 +59,7 @@ module CommissionJunction
           
           # cj_api is a hash containing a hash or return data, one element being the actual records we have
           data = cj_api.values.first.reject{|k,v| %w{records_returned page_number}.include?(k)}.values.first
-          data = [data] unless data.is_a?(Array)
+          data = [data] unless data.nil? || data.is_a?(Array)
           results = results.concat(data || [])
 
           query['page-number'] += 1 if query['page-number']
