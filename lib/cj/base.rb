@@ -71,11 +71,10 @@ module CommissionJunction
       def credentials
         unless @@credentials && @@credentials.length > 0
           # there is no offline or test mode for CJ - so I won't include any credentials in this gem
-          config_file = "config/commision_junction.yml"
-          config_file = File.join(ENV['HOME'], '.commission_junction.yaml') unless File.exist?(config_file)
+          config_file = ["config/commission_junction.yml", File.join(ENV['HOME'], '.commission_junction.yaml')].select{|f| File.exist?(f)}.first
 
           unless File.exist?(config_file)
-            warn "Warning: #{key_file} does not exist. Put your CJ developer key and website ID in ~/.commision_junction.yml to enable live testing."
+            warn "Warning: config/commission_junction.yaml does not exist. Put your CJ developer key and website ID in ~/.commission_junction.yml to enable live testing."
           else
             @@credentials = YAML.load(File.read(config_file))
           end

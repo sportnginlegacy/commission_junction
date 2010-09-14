@@ -18,7 +18,7 @@ class TestCj < Test::Unit::TestCase
     assert(result.first.is_a?(CommissionJunction::Product), "Returned wrong object")
   end
   
-  def test_retrieve_commisions
+  def test_retrieve_commissions
     # no parameters should render a list from the past two days
     result = CommissionJunction::Commission.find
     assert(!result.nil?, "No result")

@@ -2,7 +2,7 @@
 
 Commission Junction REST API interface
 
-Currently you will need a ~/.commision_junction.yml to use this.
+Currently you will need a ~/.commission_junction.yml to use this.
 
 Retrieves data from Commission Junction via REST API and returns simple objects:
 

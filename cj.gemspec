@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andrew Stevens"]
-  s.date = %q{2010-09-10}
+  s.date = %q{2010-09-13}
   s.description = %q{A wrapper for Commission Juncion's REST API to retrieve ruby objects}
   s.email = %q{astevens@tstmedia.com}
   s.extra_rdoc_files = [
